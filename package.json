@@ -6,7 +6,8 @@
     "start": "node app.js",
     "server": "nodemon app.js",
     "client": "npm run start --prefix info-pj",
-    "dev": "concurrently \"npm run server\" \"npm run client\""
+    "storybook": "npm run storybook --prefix info-pj",
+    "dev": "concurrently \"npm run server\" \"npm run client\" \"npm run storybook\""
   },
   "dependencies": {
     "concurrently": "^5.1.0",
