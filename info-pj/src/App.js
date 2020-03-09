@@ -1,13 +1,25 @@
-import React from 'react';
+import React, {PureComponent} from 'react';
 import './App.css';
-import {Button as AntBtn} from 'antd';
+import AppMenu from "./components/menu";
+import {BrowserRouter} from "react-router-dom";
+import Routes from "./components/routes";
+import {Provider} from "react-redux";
+import store from "./store";
 
-function App() {
-    return (
-        <div className="App">
-          <AntBtn type="primary">Ant Design</AntBtn>
-        </div>
-    );
+
+
+class App extends PureComponent {
+    render() {
+
+        return (<>
+            <Provider store={store}>
+            <BrowserRouter>
+                <AppMenu/>
+                <Routes/>
+            </BrowserRouter>
+            </Provider>
+        </>)
+    }
 }
 
 export default App;
